@@ -1,0 +1,55 @@
+html,
+body,
+header,
+main,
+footer {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+header,
+footer {
+  background-color: #b3d9ff;
+  text-align: center;
+  padding: 1rem;
+  align-self: stretch
+}
+
+main {
+  background-color: #e6f2ff;
+  text-align: center;
+  padding: 2rem;
+  flex-grow: 1;
+  align-self: stretch
+}
+
+/* Nav Link Colors */
+header nav a,
+footer nav a {
+  color: #004080;
+  /* dark blue for contrast */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+header nav a:visited,
+footer nav a:visited {
+  color: #011730;
+  /* slightly darker for visited links */
+}
+
+header nav a:hover,
+footer nav a:hover {
+  text-decoration: underline;
+}
