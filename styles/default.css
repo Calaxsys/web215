@@ -53,3 +53,53 @@ header nav a:hover,
 footer nav a:hover {
   text-decoration: underline;
 }
+
+/* dropdown css */
+        /* Dropdown container */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+    
+        /* Dropdown button */
+        .dropbtn {
+          background-color: #0073e6;
+          color: white;
+          padding: 10px 16px;
+          font-size: 16px;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+    
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+          border-radius: 6px;
+          z-index: 1;
+        }
+    
+        /* Links inside dropdown */
+        .dropdown-content a {
+          color: black;
+          padding: 10px 14px;
+          text-decoration: none;
+          display: block;
+        }
+    
+        /* Hover effects */
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+        }
+    
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+    
+        .dropdown:hover .dropbtn {
+          background-color: #005bb5;
+        }
