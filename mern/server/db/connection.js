@@ -26,3 +26,5 @@ export async function connectToDB() {
     throw err;
   }
 }
+
+export { db };
