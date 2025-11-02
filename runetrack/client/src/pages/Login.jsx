@@ -24,17 +24,17 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-3xl mb-4">RuneTrack</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#6f7165]">
+      <h1 className="text-4xl mb-4 font-semibold text-[#dcdeea]">RuneTrack</h1>
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-md w-80">
         <input
-          className="border w-full mb-3 p-2 rounded"
+          className="border w-full mb-3 p-2 rounded text-lg"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
-          className="border w-full mb-3 p-2 rounded"
+          className="border w-full mb-3 p-2 rounded text-lg"
           type="password"
           placeholder="Password"
           value={password}
@@ -42,7 +42,7 @@ export default function Login() {
         />
         {error && <p className="text-red-500 mb-2">{error}</p>}
         <button
-          className="bg-blue-500 text-white w-full py-2 rounded hover:bg-blue-600"
+          className="bg-[#848588] text-white w-full py-2 rounded hover:bg-[#4e4f58] cursor-pointer"
           type="submit"
         >
           Login

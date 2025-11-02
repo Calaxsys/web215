@@ -6,7 +6,6 @@ import Dashboard from "./pages/Dashboard";
 export default function App() {
   return (
     <>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
