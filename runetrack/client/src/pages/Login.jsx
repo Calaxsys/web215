@@ -25,7 +25,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <h1 className="text-3xl mb-4">Welcome to Chris Troublefield’s App</h1>
+      <h1 className="text-3xl mb-4">RuneTrack</h1>
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-md w-80">
         <input
           className="border w-full mb-3 p-2 rounded"
