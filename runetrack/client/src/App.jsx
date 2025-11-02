@@ -1,12 +1,14 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
-const App = () => {
+export default function App() {
   return (
-    <div className="w-full p-6">
-      <Navbar />
-      <Outlet />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
-export default App
+}
