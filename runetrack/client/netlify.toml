@@ -1,0 +1,4 @@
+[build]
+  base = "runetrack/client"
+  command = "npm install && npm run build"
+  publish = "runetrack/client/dist"
