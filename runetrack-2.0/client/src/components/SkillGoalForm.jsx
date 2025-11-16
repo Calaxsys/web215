@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Navigate, useOutletContext } from "react-router-dom";
+import { API_URL } from "../config";
 
 export default function SkillGoalForm() {
   const [form, setForm] = useState({
@@ -25,7 +26,7 @@ export default function SkillGoalForm() {
       if (!id) return;
       setIsNew(false);
       const response = await fetch(
-        `http://localhost:5050/skill-goals/${params.id.toString()}`
+        `${API_URL}/skill-goals/${params.id.toString()}`
       );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;
@@ -56,7 +57,7 @@ export default function SkillGoalForm() {
     try {
       let response;
       if (isNew) {
-        response = await fetch("http://localhost:5050/skill-goals", {
+        response = await fetch(`${API_URL}/skill-goals`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -64,7 +65,7 @@ export default function SkillGoalForm() {
           body: JSON.stringify(goal),
         });
       } else {
-        response = await fetch(`http://localhost:5050/skill-goals/${params.id}`, {
+        response = await fetch(`${API_URL}/skill-goals/${params.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

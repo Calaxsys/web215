@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, Navigate, useOutletContext } from "react-router-dom";
+import { API_URL } from "../config";
 
 export default function CollectionItemForm() {
   const [form, setForm] = useState({
@@ -26,7 +27,7 @@ export default function CollectionItemForm() {
       if (!id) return;
       setIsNew(false);
       const response = await fetch(
-        `http://localhost:5050/collection-log/${params.id.toString()}`
+        `${API_URL}/collection-log/${params.id.toString()}`
       );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;
@@ -57,7 +58,7 @@ export default function CollectionItemForm() {
     try {
       let response;
       if (isNew) {
-        response = await fetch("http://localhost:5050/collection-log", {
+        response = await fetch(`${API_URL}/collection-log`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -65,7 +66,7 @@ export default function CollectionItemForm() {
           body: JSON.stringify(item),
         });
       } else {
-        response = await fetch(`http://localhost:5050/collection-log/${params.id}`, {
+        response = await fetch(`${API_URL}/collection-log/${params.id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",

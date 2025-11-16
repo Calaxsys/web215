@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate, useOutletContext } from "react-router-dom";
+import { API_URL } from "../config";
 
 const SkillGoalItem = (props) => (
   <div className="flex items-center gap-4 p-4 border-b hover:bg-slate-50">
@@ -49,7 +50,7 @@ export default function SkillGoals() {
   // Fetch skill goals from the database
   useEffect(() => {
     async function getGoals() {
-      const response = await fetch(`http://localhost:5050/skill-goals/`);
+      const response = await fetch(`${API_URL}/skill-goals/`);
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
         console.error(message);
@@ -64,7 +65,7 @@ export default function SkillGoals() {
 
   // Toggle goal completion status
   async function toggleComplete(id, currentStatus) {
-    const response = await fetch(`http://localhost:5050/skill-goals/${id}`, {
+    const response = await fetch(`${API_URL}/skill-goals/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +82,7 @@ export default function SkillGoals() {
 
   // Delete a skill goal
   async function deleteGoal(id) {
-    await fetch(`http://localhost:5050/skill-goals/${id}`, {
+    await fetch(`${API_URL}/skill-goals/${id}`, {
       method: "DELETE",
     });
     const newGoals = goals.filter((el) => el._id !== id);
