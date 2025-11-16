@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate, useOutletContext } from "react-router-dom";
 
 export default function Record() {
   const [form, setForm] = useState({
@@ -10,6 +10,11 @@ export default function Record() {
   const [isNew, setIsNew] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
+  const { isAuthenticated } = useOutletContext();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
 
   useEffect(() => {
     async function fetchData() {
@@ -27,7 +32,7 @@ export default function Record() {
       const record = await response.json();
       if (!record) {
         console.warn(`Record with id ${id} not found`);
-        navigate("/");
+        navigate("/dashboard");
         return;
       }
       setForm(record);
@@ -76,7 +81,7 @@ export default function Record() {
       console.error('A problem occurred with your fetch operation: ', error);
     } finally {
       setForm({ name: "", position: "", level: "" });
-      navigate("/");
+      navigate("/dashboard");
     }
   }
 

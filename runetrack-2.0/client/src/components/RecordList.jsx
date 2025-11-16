@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useOutletContext } from "react-router-dom";
 
 const Record = (props) => (
   <tr className="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
@@ -37,6 +37,11 @@ const Record = (props) => (
 
 export default function RecordList() {
   const [records, setRecords] = useState([]);
+  const { isAuthenticated } = useOutletContext();
+
+  if (!isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
 
   // This method fetches the records from the database.
   useEffect(() => {
