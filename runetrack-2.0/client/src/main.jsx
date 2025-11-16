@@ -9,6 +9,10 @@ import Record from "./components/Record";
 import RecordList from "./components/RecordList";
 import Login from "./components/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
+import CollectionLog from "./components/CollectionLog";
+import CollectionItemForm from "./components/CollectionItemForm";
+import SkillGoals from "./components/SkillGoals";
+import SkillGoalForm from "./components/SkillGoalForm";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -22,14 +26,42 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
+        element: <CollectionLog />,
+      },
+      {
+        path: "/collection-log",
+        element: <CollectionLog />,
+      },
+      {
+        path: "/collection-log/add",
+        element: <CollectionItemForm />,
+      },
+      {
+        path: "/collection-log/edit/:id",
+        element: <CollectionItemForm />,
+      },
+      {
+        path: "/skill-goals",
+        element: <SkillGoals />,
+      },
+      {
+        path: "/skill-goals/add",
+        element: <SkillGoalForm />,
+      },
+      {
+        path: "/skill-goals/edit/:id",
+        element: <SkillGoalForm />,
+      },
+      {
+        path: "/employees",
         element: <RecordList />,
       },
       {
-        path: "/edit/:id",
+        path: "/employees/edit/:id",
         element: <Record />,
       },
       {
-        path: "/create",
+        path: "/employees/create",
         element: <Record />,
       },
     ],

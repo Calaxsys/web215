@@ -2,6 +2,8 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import records from "./routes/record.js";
+import collectionLog from "./routes/collectionLog.js";
+import skillGoals from "./routes/skillGoals.js";
 
 
 const PORT = process.env.PORT || 5050;
@@ -31,9 +33,11 @@ function auth(req, res, next) {
 }
 
 app.use("/record", auth, records);
+app.use("/collection-log", auth, collectionLog);
+app.use("/skill-goals", auth, skillGoals);
 
 app.get("/", (req, res) => {
-  res.send("WEB215 App Backend Running");
+  res.send("RuneTrack 2.0 Backend Running");
 });
 
 app.listen(PORT, () => {
