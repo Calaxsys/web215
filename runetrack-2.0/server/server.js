@@ -8,7 +8,14 @@ import skillGoals from "./routes/skillGoals.js";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
-app.use(cors());
+
+// Configure CORS to allow requests from Netlify frontend
+const corsOptions = {
+  origin: ['http://localhost:5173', 'https://runetrack.netlify.app'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Authentication temporarily disabled for testing
