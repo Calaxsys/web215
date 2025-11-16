@@ -38,6 +38,10 @@ export default function SkillGoals() {
   const [goals, setGoals] = useState([]);
   const { isAuthenticated } = useOutletContext();
 
+  useEffect(() => {
+    document.title = "Skill Goals - RuneTrack 2.0";
+  }, []);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }

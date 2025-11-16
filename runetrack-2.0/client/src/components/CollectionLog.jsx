@@ -38,6 +38,10 @@ export default function CollectionLog() {
   const [items, setItems] = useState([]);
   const { isAuthenticated } = useOutletContext();
 
+  useEffect(() => {
+    document.title = "Collection Log - RuneTrack 2.0";
+  }, []);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }

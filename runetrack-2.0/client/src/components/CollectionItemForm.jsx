@@ -12,6 +12,10 @@ export default function CollectionItemForm() {
   const navigate = useNavigate();
   const { isAuthenticated } = useOutletContext();
 
+  useEffect(() => {
+    document.title = `${isNew ? 'Add' : 'Edit'} Collection Item - RuneTrack 2.0`;
+  }, [isNew]);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }

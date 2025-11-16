@@ -11,6 +11,10 @@ export default function SkillGoalForm() {
   const navigate = useNavigate();
   const { isAuthenticated } = useOutletContext();
 
+  useEffect(() => {
+    document.title = `${isNew ? 'Add' : 'Edit'} Skill Goal - RuneTrack 2.0`;
+  }, [isNew]);
+
   if (!isAuthenticated) {
     return <Navigate to="/" replace />;
   }
