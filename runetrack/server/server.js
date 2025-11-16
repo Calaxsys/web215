@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/collection", collectionRoutes);
+app.use("/collection", collectionRoutes);
 
 const USER = "web215user";
 const PASS = "LetMeIn!";

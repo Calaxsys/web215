@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 
-const collectionLogSchema = new mongoose.Schema({
+const CollectionLogSchema = new mongoose.Schema({
   itemName: { type: String, required: true },
-  boss: { type: String, required: true },
-  quantity: { type: Number, default: 1 },
-  obtainedOn: { type: Date, default: Date.now },
+  amount: { type: Number, default: 0 },
 });
 
-export default mongoose.model("CollectionLog", collectionLogSchema);
+export default mongoose.model("CollectionLog", CollectionLogSchema);

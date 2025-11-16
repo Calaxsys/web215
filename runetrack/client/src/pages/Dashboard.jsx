@@ -3,33 +3,36 @@ import { useNavigate } from "react-router-dom";
 export default function Dashboard() {
   const navigate = useNavigate();
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-green-100">
-      <h1 className="text-4xl font-semibold mb-8">You're logged in!</h1>
+  const buttonStyles =
+    "p-6 bg-white rounded-xl shadow-md cursor-pointer border border-green-300 " +
+    "hover:bg-green-200 hover:scale-[1.02] active:scale-95 transition-all";
 
-      <div className="grid grid-cols-2 gap-4 max-w-md w-full">
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-green-100 p-6">
+      <h1 className="text-4xl font-semibold mb-8 text-green-800">You're logged in!</h1>
+
+      <div className="grid grid-cols-2 gap-6 max-w-md w-full">
         <div
           onClick={() => navigate("/collection")}
-          className="p-4 bg-white rounded shadow cursor-pointer hover:bg-green-200 transition"
+          className={buttonStyles}
         >
-          Collection Log
+          <p className="text-xl font-semibold text-center">📜 Collection Log</p>
         </div>
 
         <div
           onClick={() => navigate("/boss")}
-          className="p-4 bg-white rounded shadow cursor-pointer hover:bg-green-200 transition"
+          className={buttonStyles}
         >
-          Boss KillCount
+          <p className="text-xl font-semibold text-center">⚔️ Boss Killcount</p>
         </div>
 
         <div
           onClick={() => navigate("/goals")}
-          className="p-4 bg-white rounded shadow cursor-pointer hover:bg-green-200 transition col-span-2"
+          className={`${buttonStyles} col-span-2`}
         >
-          Goals
+          <p className="text-xl font-semibold text-center">🎯 Goals</p>
         </div>
       </div>
     </div>
   );
 }
-
