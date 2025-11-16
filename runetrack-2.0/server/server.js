@@ -2,14 +2,39 @@ import express from "express";
 import cors from "cors";
 import records from "./routes/record.js";
 
+
 const PORT = process.env.PORT || 5050;
 const app = express();
-
 app.use(cors());
 app.use(express.json());
-app.use("/record", records);
 
-// start the Express server
+let isAuthenticated = false;
+
+const USER = "web215user";
+const PASS = "LetMeIn!";
+
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
+  if (username === USER && password === PASS) {
+     isAuthenticated = true;
+    return res.status(200).json({ message: "Login successful" });
+  }
+  res.status(401).json({ message: "Invalid credentials" });
+});
+
+function auth(req, res, next) {
+  if (!isAuthenticated) {
+    return res.status(403).json({ message: "Not authorized" });
+  }
+  next();
+}
+
+app.use("/record", auth, records);
+
+app.get("/", (req, res) => {
+  res.send("WEB215 App Backend Running");
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
