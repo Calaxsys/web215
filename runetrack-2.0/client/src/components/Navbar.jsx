@@ -16,7 +16,7 @@ export default function Navbar({ isAuthenticated, onLogout }) {
     <div>
       <nav className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-4">
-          <NavLink to="/dashboard" className="font-bold text-xl text-slate-900">
+          <NavLink to="/dashboard" className="font-bold text-xl text-amber-400">
             RuneTrack 2.0
           </NavLink>
           <div className="flex gap-2">
@@ -25,8 +25,8 @@ export default function Navbar({ isAuthenticated, onLogout }) {
               className={({ isActive }) =>
                 `inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors h-9 rounded-md px-3 ${
                   isActive
-                    ? 'bg-slate-200 text-slate-900'
-                    : 'text-slate-600 hover:bg-slate-100'
+                    ? 'bg-slate-200 text-slate-400'
+                    : 'text-amber-400 hover:bg-slate-100'
                 }`
               }
             >
