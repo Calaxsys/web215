@@ -11,7 +11,7 @@ const SkillGoalItem = (props) => (
       className="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
     />
     <div className="flex-1">
-      <p className={`text-base ${props.goal.completed ? 'line-through text-gray-500' : 'text-slate-900'}`}>
+      <p className={`text-base ${props.goal.completed ? 'line-through text-gray-500' : 'text-amber-400'}`}>
         {props.goal.goalDescription}
       </p>
     </div>
@@ -107,7 +107,7 @@ export default function SkillGoals() {
 
       {/* Active Goals */}
       <div className="border rounded-lg overflow-hidden mb-6 bg-amber-950 text-amber-400">
-        <div className="bg-slate-100 p-3 border-b">
+        <div className="bg-amber-800 p-3 border-b">
           <h4 className="font-semibold text-slate-900">Active Goals ({incompleteGoals.length})</h4>
         </div>
         <div className="relative w-full">
