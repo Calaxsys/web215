@@ -25,7 +25,7 @@ export default function Navbar({ isAuthenticated, onLogout }) {
               className={({ isActive }) =>
                 `inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors h-9 rounded-md px-3 ${
                   isActive
-                    ? 'bg-slate-200 text-slate-400'
+                    ? 'bg-neutral-900 text-amber-200'
                     : 'text-amber-400 hover:bg-slate-100'
                 }`
               }
@@ -37,8 +37,8 @@ export default function Navbar({ isAuthenticated, onLogout }) {
               className={({ isActive }) =>
                 `inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors h-9 rounded-md px-3 ${
                   isActive
-                    ? 'bg-slate-200 text-slate-900'
-                    : 'text-slate-600 hover:bg-slate-100'
+                    ? 'bg-neutral-900 text-amber-200'
+                    : 'text-amber-400 hover:bg-slate-100'
                 }`
               }
             >
