@@ -106,7 +106,7 @@ export default function SkillGoals() {
       </div>
 
       {/* Active Goals */}
-      <div className="border rounded-lg overflow-hidden mb-6">
+      <div className="border rounded-lg overflow-hidden mb-6 bg-amber-950 text-amber-400">
         <div className="bg-slate-100 p-3 border-b">
           <h4 className="font-semibold text-slate-900">Active Goals ({incompleteGoals.length})</h4>
         </div>
