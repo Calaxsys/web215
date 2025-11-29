@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Custom Color CSS */
+body {
+  background-color: rgb(60, 51, 39);
+  color: rgb(255, 255, 0);
+}
