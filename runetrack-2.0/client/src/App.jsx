@@ -14,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <div className="w-full p-6 bg-amber-950 text-amber-400">
+    <div className="w-full p-6 bg-amber-950 text-amber-400 flex flex-col min-h-full">
       <Navbar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
       <Outlet context={{ isAuthenticated, onLogin: handleLogin }} />
     </div>
