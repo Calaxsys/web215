@@ -3,7 +3,7 @@ import { Link, Navigate, useOutletContext } from "react-router-dom";
 import { API_URL } from "../config";
 
 const SkillGoalItem = (props) => (
-  <div className="flex items-center gap-4 p-4 border-b hover:bg-amber-600">
+  <div className="flex items-center gap-4 p-4 border-b hover:bg-amber-600 hover:text-slate-900">
     <input
       type="checkbox"
       checked={props.goal.completed}
@@ -23,7 +23,7 @@ const SkillGoalItem = (props) => (
         Edit
       </Link>
       <button
-        className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-amber-400 hover:text-amber-950 hover:text-accent-foreground h-9 rounded-md px-3"
+        className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-amber-400 hover:text-amber-950 hover:text-accent-foreground h-9 rounded-md px-3 cursor-pointer"
         type="button"
         onClick={() => {
           props.deleteGoal(props.goal._id);

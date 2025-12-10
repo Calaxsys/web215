@@ -96,10 +96,10 @@ export default function SkillGoalForm() {
       >
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-slate-900/10 pb-12 md:grid-cols-2">
           <div>
-            <h2 className="text-base font-semibold leading-7 text-slate-900">
+            <h2 className="text-base font-semibold leading-7 text-amber-400">
               Goal Information
             </h2>
-            <p className="mt-1 text-sm leading-6 text-slate-600">
+            <p className="mt-1 text-sm leading-6 text-amber-200">
               Set and track your RuneScape skill goals
             </p>
           </div>
@@ -108,17 +108,17 @@ export default function SkillGoalForm() {
             <div className="sm:col-span-4">
               <label
                 htmlFor="goalDescription"
-                className="block text-sm font-medium leading-6 text-slate-900"
+                className="block text-sm font-medium leading-6 text-amber-400"
               >
                 Goal Description
               </label>
               <div className="mt-2">
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-slate-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-amber-400 focus-within:ring-2 focus-within:ring-inset focus-within:ring-amber-200 sm:max-w-md">
                   <textarea
                     name="goalDescription"
                     id="goalDescription"
                     rows="3"
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-slate-900 placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-amber-400 placeholder:text-slate-400 focus:ring-0 sm:text-sm sm:leading-6"
                     placeholder="Get 99 Woodcutting"
                     value={form.goalDescription}
                     onChange={(e) => updateForm({ goalDescription: e.target.value })}
@@ -140,7 +140,7 @@ export default function SkillGoalForm() {
                   />
                   <label
                     htmlFor="completed"
-                    className="text-sm font-medium leading-6 text-slate-900"
+                    className="text-sm font-medium leading-6 text-amber-400"
                   >
                     Mark as completed
                   </label>
